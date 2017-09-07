@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'ZillianceShared_Example' do
+  pod 'ZillianceShared', :path => '../'
+
+  target 'ZillianceShared_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
