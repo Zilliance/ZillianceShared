@@ -37,8 +37,9 @@ TODO: Add long description of the pod here.
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
+  s.frameworks = 'UIKit'
   # s.dependency 'AFNetworking', '~> 2.3'
   s.dependency 'Realm'
   s.dependency 'RealmSwift'
+  s.ios.deployment_target = '9.0'
 end
