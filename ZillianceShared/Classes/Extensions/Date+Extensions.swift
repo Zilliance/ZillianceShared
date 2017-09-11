@@ -7,7 +7,7 @@
 //
 
 import Foundation
-extension Date {
+public extension Date {
     
     func weekDay() -> Int {
         let calendar = NSCalendar.current
