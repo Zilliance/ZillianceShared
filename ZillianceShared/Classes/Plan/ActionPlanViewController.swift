@@ -168,8 +168,9 @@ public class ActionPlanViewController: AnalyzedViewController {
     }
     
     func generatePDF(completion: (URL?, Error?) -> ()) {
-        
-        let planVC = UIStoryboard(name: "Plan", bundle: nil).instantiateViewController(withIdentifier: "ActionPlanViewController") as! ActionPlanViewController
+        let bundle = ZillianceSharedBundle.resourcesBundle
+
+        let planVC = UIStoryboard(name: "Plan", bundle: bundle).instantiateViewController(withIdentifier: "ActionPlanViewController") as! ActionPlanViewController
         
         planVC.notifications = notifications
         planVC.showMeditationCell = false
