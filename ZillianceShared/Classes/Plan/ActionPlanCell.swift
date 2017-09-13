@@ -49,7 +49,7 @@ class ActionPlanCell: UITableViewCell {
         }
         
         let imageName = item.type == .calendar ? "iconCalendar" : "iconNotification"
-        let image = UIImage(named: imageName)
+        let image = UIImage(named: imageName, in: ZillianceSharedBundle.resourcesBundle, compatibleWith: nil)
         self.notificationTypeImageView.image = image
         
         self.notificationText.text = item.body
