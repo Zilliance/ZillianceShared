@@ -31,7 +31,9 @@ public class ActionPlanViewController: AnalyzedViewController {
         self.tableView.estimatedRowHeight = 80
         self.tableView.separatorColor = UIColor.color(forRed: 249, green: 249, blue: 250, alpha: 1)
         
-        self.setupAudioPlayer()
+        if (self.showMeditationCell) {
+            self.setupAudioPlayer()
+        }
     }
     
     override public func viewWillAppear(_ animated: Bool) {
