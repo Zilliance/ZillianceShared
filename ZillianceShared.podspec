@@ -32,14 +32,16 @@ TODO: Add long description of the pod here.
 
   s.source_files = 'ZillianceShared/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'ZillianceShared' => ['ZillianceShared/Assets/*.png']
-  # }
+  s.resource_bundles = {
+     'Resources' => ['ZillianceShared/Resources/**/*.{storyboard,xib,xcassets,json,imageset,png}']
+  }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit'
   # s.dependency 'AFNetworking', '~> 2.3'
   s.dependency 'Realm'
   s.dependency 'RealmSwift'
+  s.dependency 'SVProgressHUD'
+  s.dependency 'PDFGenerator'
   s.ios.deployment_target = '9.0'
 end
