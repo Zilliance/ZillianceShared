@@ -89,18 +89,20 @@ open class ZillianceAnalytics {
     
     public enum DetailedEvents: AnalyticEvent {
         
-        case tourPagedViewed(Int)
+        case tourPageViewed(Int)
         case tourClosed(Int)
         case viewControllerShown(String)
         
         public var name: String {
             switch self {
-            case .tourPagedViewed(_):
-                return "Tour Paged Viewed"
+            case .tourPageViewed(_):
+                return "Tour Page Viewed"
             case .viewControllerShown(let name):
                 var name = name.replacingOccurrences(of: "CollectionViewController", with: "")
+                name = name.replacingOccurrences(of: "TableViewController", with: "")
                 name = name.replacingOccurrences(of: "ViewController", with: "")
-                name = name.replacingOccurrences(of: ZillianceAnalytics.projectName, with: "")
+                name = name.replacingOccurrences(of: ".", with: "")
+                name = name.replacingOccurrences(of: ZillianceAnalytics.projectName.replacingOccurrences(of: ".", with: ""), with: "")
                 return "View Shown - " + name
             case .tourClosed(_):
                 return "Tour Closed"
@@ -111,7 +113,7 @@ open class ZillianceAnalytics {
         public var data: [String : Any]? {
             
             switch self {
-            case .tourPagedViewed(let page):
+            case .tourPageViewed(let page):
                 return ["Page": page]
             case .tourClosed(let page):
                 return ["Page": page]
