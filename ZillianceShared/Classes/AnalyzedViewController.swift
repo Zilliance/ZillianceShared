@@ -9,7 +9,7 @@
 import UIKit
 
 extension NSObject {
-    public var theClassName: String {
+    open var analyticsObjectName: String {
         return NSStringFromClass(type(of: self))
     }
 }
@@ -19,7 +19,7 @@ open class AnalyzedViewController: UIViewController {
     override open func viewDidLoad() {
         super.viewDidLoad()
         
-        let viewName = self.theClassName
+        let viewName = self.analyticsObjectName
         
         ZillianceAnalytics.analyticsService.send(event: ZillianceAnalytics.DetailedEvents.viewControllerShown(viewName))
 
