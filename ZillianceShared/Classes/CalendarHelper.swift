@@ -54,7 +54,7 @@ public final class CalendarHelper {
             event.endDate = event.startDate.addingTimeInterval(3600) // 1 hour event
             event.calendar = store.defaultCalendarForNewEvents
             do {
-                try store.save(event, span: .thisEvent)
+                try store.save(event, span: .thisEvent, commit: true)
                 DispatchQueue.main.async { calendarClosure(event.eventIdentifier, nil) }
             } catch {
                 DispatchQueue.main.async { calendarClosure(nil, .errorSavingEvent) }
