@@ -252,7 +252,7 @@ public final class LocalNotificationsHelper: NSObject
 
 extension LocalNotificationsHelper: UNUserNotificationCenterDelegate {
     
-    func listenToNotifications() {
+    public func listenToNotifications() {
         
         if #available(iOS 10.0, *) {
             UNUserNotificationCenter.current().delegate = self

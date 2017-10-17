@@ -127,7 +127,7 @@ public final class NotificationsManager: NotificationStore {
         }
     }
     
-    func removeNotifications(withAssociatedObjectId id: String) {
+    public func removeNotifications(withAssociatedObjectId id: String) {
         
         let notifications = realmDB.objects(Notification.self).filter { $0.associatedObjectId == id }
         
